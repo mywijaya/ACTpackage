@@ -6396,7 +6396,7 @@ result <- suppressMessages(suppressWarnings({
   }))
 
 
-  input_file <- system.file("ACT Main Analysis - TFL Markdown.Rmd", package = "Rpack")
+  input_file <- system.file("ACT Main Analysis - TFL Markdown.Rmd", package = "ACTpackage")
   # Check if the input file exists
   if (!file.exists(input_file)) {
     stop("The input file does not exist.")
