@@ -1,0 +1,257 @@
+---
+title: "List of Tables and Figures - 217932 ACT Study"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "D:/odesk/upwork 2023/6. Islah Project - GSK ACT/Final R code/")
+```
+
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 1
+library(tidyverse)
+library(knitr)
+table <- read.csv("table1.csv")
+N <- parse_number(gsub("\\.", "", names(table)[3]))
+names(table) <- c("index", "Summary Variable", paste("[N = ", N, "]", sep = ""))
+kable(table[,-1], align = "lc", caption = "Table 1: Summary of Analysis Sets and Final Patient Status")
+```
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 2
+table <- read.csv("table2.csv")
+N <- parse_number(gsub("\\.", "", names(table)[4]))
+names(table) <- c("index", "Characteristic", "Statistic", paste("[N = ", N, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcc", 
+      caption = "Table 2: Summary of Patient Socio-Demographic Characteristic at Index and Clinical Characteristics at Index and Post-Index") 
+```
+
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 3
+table <- read.csv("table3.csv")
+names(table) <- c("index", "Summary Variable", "Statistic", paste("[N = ", N, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcc", 
+      caption = "Table 3: Summary of Comorbid Conditions at Index and Post-Index") 
+```
+
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 4
+table <- read.csv("table4.csv")
+names(table) <- c("index", "Summary Variable", "Statistic", paste("[N = ", N, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcc", 
+      caption = "Table 4: Summary of Asthma Exacerbations including HCRU and Steroid Use Related to Exacerbation Post-Index") 
+```
+
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 5
+table <- read.csv("table5.csv")
+names(table) <- c("index", "Summary Variable", "Statistic", paste("[N = ", N, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcc", 
+      caption = "Table 5: Summary of Physician Visits, ICS/LABA Treatment and Other Asthma Medications at Index and/or Post-Index") 
+```
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 6
+table <- read.csv("table6.csv")
+names(table) <- c("index", "Summary Variable", "Statistic", 
+                  paste("Index [N = ", table[1,4], "]", sep = ""), 
+                  paste("Post-index [N = ", table[1,5], "]", sep = ""),
+                  paste("Ongoing [N = ", table[1,6], "]", sep = ""))
+options(knitr.kable.NA = '')
+table_f <- table[-1,-1]
+rownames(table_f)<-NULL
+kable(table_f, 
+      align = "lccc", 
+      caption = "Table 6: Summary of Concomitant Comorbidity Medications at Index and Post-index") 
+```
+
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 7
+table <- read.csv("table7.csv")
+N <- parse_number(gsub("\\.", "", names(table)[4]))
+names(table) <- c("index", "Summary Variable", "Statistic", paste("[N = ", N, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcc", 
+      caption = "Table 7: Summary of ACT outcome at post-index") 
+```
+
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 8
+table <- read.csv("table8.csv")
+N1 <- parse_number(gsub("\\.", "", names(table)[4]))
+N2 <- parse_number(gsub("\\.", "", names(table)[5]))
+N3 <- parse_number(gsub("\\.", "", names(table)[6]))
+N4 <- parse_number(gsub("\\.", "", names(table)[7]))
+names(table) <- c("index", "Summary Variable", "Statistic", 
+                  paste("Total Control [N = ", N1, "]", sep = ""),
+                  paste("Well-Controlled [N = ", N2, "]", sep = ""),
+                  paste("Uncontolled [N = ", N3, "]", sep = ""),
+                  paste("Total [N = ", N4, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lccccc", 
+      caption = "Table 8: Summary of Scheduled Physician Visit, Asthma Medication, and Comorbid Conditions by ACT Outcome at Post-index") 
+```
+
+\newpage
+
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 9
+table <- read.csv("table9.csv")
+N <- parse_number(gsub("\\.", "", names(table)[4]))
+names(table) <- c("index", "Summary Variable", "Statistic", paste("[N = ", N, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcc", 
+      caption = "Table 9: Summary of Changes in ACT result/outcome from Index to Post-Index") 
+```
+
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 10
+table <- read.csv("table10.csv")
+N1 <- parse_number(gsub("\\.", "", names(table)[4]))
+N2 <- parse_number(gsub("\\.", "", names(table)[5]))
+N3 <- parse_number(gsub("\\.", "", names(table)[6]))
+names(table) <- c("index", "Summary Variable", "Statistic", 
+                  paste("Controlled [N = ", N1, "]", sep = ""),
+                  paste("Uncontolled [N = ", N2, "]", sep = ""),
+                  paste("Total [N = ", N3, "]", sep = ""))
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcccc", 
+      caption = "Table 10: Summary of Predictive Variables by ACT outcome") 
+```
+
+
+
+\newpage
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Table 10b
+table <- read.csv("table10b.csv")
+N1 <- parse_number(gsub("\\.", "", names(table)[4]))
+N2 <- parse_number(gsub("\\.", "", names(table)[5]))
+N3 <- parse_number(gsub("\\.", "", names(table)[6]))
+names(table) <- c("index", "Summary Variable", "Statistic", 
+                  paste("Controlled [N = ", N1, "]", sep = ""),
+                  paste("Uncontolled [N = ", N2, "]", sep = ""),
+                  paste("Total [N = ", N3, "]", sep = ""),
+                  "p-value",
+                  "Total Missingness")
+options(knitr.kable.NA = '')
+kable(table[,-1], 
+      align = "lcccc", 
+      caption = "Table 10b: Summary of Predictive Variables by ACT outcome") 
+```
+
+
+
+
+
+\newpage
+
+<h1 align="center">Figure 1: Pie Chart of ACT Outcome at 6-12 Months Post-index</h1>
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Figure 1
+knitr::include_graphics("figure1.png")
+```
+
+
+\newpage
+
+<h1 align="center">Figure 2: Boxplot of ACT Score at Index and 6-12 Months Post-index</h1>
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Figure 2
+knitr::include_graphics("figure2.png")
+```
+
+
+
+\newpage
+
+<h1 align="center">Figure 3: Stacked-bar Chart of ACT Outcome at Index and 6-12 Months Post-index</h1>
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Figure 3
+knitr::include_graphics("figure3.png")
+```
+
+
+\newpage
+
+<h1 align="center">Figure 4: Plot of Total Number of ER and Hospitalization Asthma Exacerbations with and without Steroid Treatment Post-Index</h1>
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Figure 4
+knitr::include_graphics("figure4.png")
+```
+
+
+\newpage
+
+<h1 align="center">Figure 5: Boxplot of FEV1(%) Measured from Index or Nearest Index (up to 60 days pre-Index) to 12 Months Post-Index</h1>
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Figure 5
+knitr::include_graphics("figure5.png")
+```
+
+
+
+\newpage
+
+<h1 align="center">Figure 6: Estimated Odds Ratios (95% CI) for Predictive Parameters of ACT Control (Reduced Model 1) </h1>
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Figure 6
+knitr::include_graphics("figure6v2a.png")
+```
+
+
+
+\newpage
+
+<h1 align="center">Figure 6: Estimated Odds Ratios (95% CI) for Predictive Parameters of ACT Control (Reduced Model 2) </h1>
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Figure 6
+knitr::include_graphics("figure6v2b.png")
+```
